@@ -1,0 +1,12 @@
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\KmnlkUMS.Tests.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\KmnlkUMS.Tests.pdb
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\obj\Debug\KmnlkUMS.Tests.csprojResolveAssemblyReference.cache
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\obj\Debug\KmnlkUMS.Tests.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMS.Tests\obj\Debug\KmnlkUMS.Tests.pdb

@@ -1,0 +1,263 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Kmnlk">
+
+    <title>K-User Managment System</title>
+
+
+    @Styles.Render("~/Content/css/theme/en")
+    @Styles.Render("~/Content/css/pub")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body id="page-top" class="sidebar-toggled" style="display:none;">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top ">
+        <a class="navbar-brand mr-1" href="">
+            <span resourceID="resUMSProjectTitle">K-User Managment System</span>
+        </a>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar Search -->
+        <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" id="formSearch">
+            <div class="input-group">
+                <input type="text" id="navbarSearch" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="button" id="navbarDoSearch">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <ul class="navbar-nav ml-auto ml-md-0" id="navbarMenu">
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-bell fa-fw"></i>
+                    <span class="badge badge-danger">9+</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-envelope fa-fw"></i>
+                    <span class="badge badge-danger">7</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">Activity Log</a>
+                    <a class="dropdown-item" id="itemLang" href="" onclick="changeLang()">En</a>
+                    <a class="dropdown-item" href="#"><span resourceID="resUMSMenuSettingsTitle">Settings</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><span resourceID="resUMSLogoutTitle">Logout</span></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav toggled">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html" onclick="activate('Dashboard','resUMSMenuDashboardTitle')">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span resourceID="resUMSMenuDashboardTitle">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Examples</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <h6 class="dropdown-header">Login Screens:</h6>
+                    <a class="dropdown-item" href="#">Login</a>
+                    <a class="dropdown-item" href="#">Register</a>
+                    <a class="dropdown-item" href="#">Forgot Password</a>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Other Pages:</h6>
+                    <a class="dropdown-item" href="#">404 Page</a>
+                    <a class="dropdown-item" href="#">Blank Page</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuGeneralTitle">General</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Operations','resUMSMenuOperationsTitle')"><span resourceID="resUMSMenuOperationsTitle">Operations</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Delegations','resUMSMenuDelegationsTitle')"><span resourceID="resUMSMenuDelegationsTitle">Delegations</span></a>
+                </div>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuDepartmentsTitle">Departments</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Departments','resUMSMenuDepartmentsTitle')"><span resourceID="resUMSMenuDepartmentsTitle">Departments</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Departments Positions','resUMSMenuDepartmentsPositionsTitle')"><span resourceID="resUMSMenuDepartmentsPositionsTitle">Departments Positions</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Departments Responsibilities','resUMSMenuDepartmentsResponsibilitiesTitle')"><span resourceID="resUMSMenuDepartmentsResponsibilitiesTitle">Departments Responsibilities</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Departments Contacts','resUMSMenuDepartmentsContactsTitle')"><span resourceID="resUMSMenuDepartmentsContactsTitle">Departments Contacts</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Departments Notes','resUMSMenuDepartmentsNotesTitle')"><span resourceID="resUMSMenuDepartmentsNotesTitle">Departments Notes</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Departments Attachments','resUMSMenuDepartmentsAttachmentsTitle')"><span resourceID="resUMSMenuDepartmentsAttachmentsTitle">Departments Attachments</span></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuRolesTitle">Roles</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Roles','resUMSMenuRolesTitle')"><span resourceID="resUMSMenuRolesTitle">Roles</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Positions','resUMSMenuRolesPositionsTitle')"><span resourceID="resUMSMenuRolesPositionsTitle">Roles Positions</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Responsibilities','resUMSMenuRolesResponsibilitiesTitle')"><span resourceID="resUMSMenuRolesResponsibilitiesTitle">Roles Responsibilities</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Contacts','resUMSMenuRolesContactsTitle')"><span resourceID="resUMSMenuRolesContactsTitle">Roles Contacts</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Notes','resUMSMenuRolesNotesTitle')"><span resourceID="resUMSMenuRolesNotesTitle">Roles Notes</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Attachments','resUMSMenuRolesAttachmentsTitle')"><span resourceID="resUMSMenuRolesAttachmentsTitle">Roles Attachments</span></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuPositionsTitle">Positions</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Positions','resUMSMenuPositionsTitle')"><span resourceID="resUMSMenuPositionsTitle">Positions</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Positions Responsibilities','resUMSMenuPositionsResponsibilitiesTitle')"><span resourceID="resUMSMenuPositionsResponsibilitiesTitle">Positions Responsibilities</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Positions Contacts','resUMSMenuPositionsContactsTitle')"><span resourceID="resUMSMenuPositionsContactsTitle">Positions Contacts</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Positions Notes','resUMSMenuPositionsNotesTitle')"><span resourceID="resUMSMenuPositionsNotesTitle">Positions Notes</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Positions Attachments','resUMSMenuPositionsAttachmentsTitle')"><span resourceID="resUMSMenuPositionsAttachmentsTitle">Positions Attachments</span></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuPrivilagesTitle">Privilages</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Privilages','resUMSMenuPrivilagesTitle')"><span resourceID="resUMSMenuPrivilagesTitle">Privilages</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Users Privilages','resUMSMenuUsersPrivilagesTitle')"><span resourceID="resUMSMenuUsersPrivilagesTitle">Users Privilages</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Positions Privilages','resUMSMenuPositionsPrivilagesTitle')"><span resourceID="resUMSMenuPositionsPrivilagesTitle">Positions Privilages</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Roles Privilages','resUMSMenuRolesPrivilagesTitle')"><span resourceID="resUMSMenuRolesPrivilagesTitle">Roles Privilages</span></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span resourceID="resUMSMenuUsersTitle">Users</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="#" onclick="activate('Users','resUMSMenuUsersProfilesTitle')"><span resourceID="resUMSMenuUsersProfilesTitle">Users &Aacute; Profiles</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Users Positions','resUMSMenuUsersPositionsTitle')"><span resourceID="resUMSMenuUsersPositionsTitle">Users Positions</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Users Contacts','resUMSMenuUsersContactsTitle')"><span resourceID="resUMSMenuUsersContactsTitle">Users Contacts</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Users Notes','resUMSMenuUsersNotesTitle')"><span resourceID="resUMSMenuUsersNotesTitle">Users Notes</span></a>
+                    <a class="dropdown-item" href="#" onclick="activate('Users Attachments','resUMSMenuUsersAttachmentsTitle')"><span resourceID="resUMSMenuUsersAttachmentsTitle">Users Attachments</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" onclick="activate('Profiles Attachments','resUMSMenuProfilesAttachmentsTitle')"><span resourceID="resUMSMenuProfilesAttachmentsTitle">Profiles Attachments</span></a>
+                </div>
+            </li>
+
+        </ul>
+      
+        <div id="content-wrapper">
+        
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb" id="actionbarMenu">
+                <li class="breadcrumb-item">
+                    <a href="#"><span resourceID="resUMSProjectTitle">K-User Managment System</span></a>
+                </li>
+                <li class="breadcrumb-item active" id="titleContent"></li>
+            </ol>
+         
+            
+                <div id="divMessageError" style="" class="btn btn-dark" disabled>
+                    <button class="close" type="button" onclick="$('#divMessageError').css('display', 'none'); $('#messageError').html('')">
+                        <span aria-hidden="true"  style="color:white;">X</span>
+                    </button>
+                    <span id="messageError" style="padding:5px;">
+                        Message
+                    </span>
+                </div>
+   
+            <button id="loading" style="" class="btn btn-dark" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <span resourceID="resUMSLoadingProgressTitle">Loading... </span>
+            </button>
+    
+            <div class="container-fluid">
+                <div id="contentDiv">
+                    <iframe id="content" src="" scrolling="auto" ></iframe>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer" id="footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span><span resourceID="resUMSCopyright">Copyright</span> &copy; K-UMS @DateTime.Now.Year &copy;</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/theme")
+    <script src="~/Scripts/resources/AllResources.js"></script>
+    <script src="@Url.Content("~/Scripts/home.js")"></script>
+
+
+    <script>
+
+        function activate(panelID, resID) {
+            var resValue = getResourceValue(resID, lang);
+            $("#titleContent").html(resValue);
+            contentID = panelID;
+            var content = $('#content');
+            if (content != undefined && content != null) {
+                $("#loading").css("display","");
+                switch (panelID.toLowerCase()) {
+                    case "users":
+                        content.prop('src', '@Url.Action("Index", "User")');
+                        break;
+                }
+            }
+        }
+
+        activate("USERS", "resUMSMenuUsersTitle");
+        
+    </script>
+</body>
+</html>

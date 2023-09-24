@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+
+<html>
+<body>
+
+    <div class="table-responsive" id="contentPage" style="display:none;">
+
+        <table class="table table-bordered table-hover" id="dataTable" style="width:100%;" cellspacing="0">
+
+            <thead>
+                <tr>
+                    <th class="none">#</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <thead class="filters">
+                <tr>
+                    <td><input type="checkbox" id="checkboxall" onchange="changeCheckBoxAll()" style="width:20px; height:20px;" /></td>
+                    <td class="filter">Name</td>
+                    <td class="filter">Position</td>
+                    <td class="filter">Office</td>
+                    <td class="filter">Age</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+            @*<tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                    </tr>
+                </tfoot>*@
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a style="color:black" class="page-link" href="#">First</a></li>
+                <li class="page-item"><a style="color:black" class="page-link" href="#">Privous</a></li>
+                <li id="paggingnumber" style="color:black" class="page-item"><a class="page-link">1/2</a></li>
+                <li class="page-item"><a style="color:black" class="page-link" href="#">Next</a></li>
+                <li class="page-item"><a style="color:black" class="page-link" href="#">Last</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+</body>
+</html>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/core/home_index.js")"></script>
+}

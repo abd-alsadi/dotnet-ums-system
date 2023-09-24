@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75DA710E-8D32-4FF7-BA0C-7E869FE436B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KmnlkUMSEngine</RootNamespace>
+    <AssemblyName>KmnlkUMSEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KmnlkCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\KmnlkCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="KmnlkUMSEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KmnlkUMSEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Constants\modConstant.cs" />
+    <Compile Include="Constants\PROCEDURES.cs" />
+    <Compile Include="Exceptions\EngineException.cs" />
+    <Compile Include="Interfaces\IReaderSqlOperations.cs" />
+    <Compile Include="Interfaces\IReaderOracleOperations.cs" />
+    <Compile Include="Interfaces\IValidationOperations.cs" />
+    <Compile Include="KmnlkUMSModel.cs" />
+    <Compile Include="Interfaces\ICURDOperations.cs" />
+    <Compile Include="Connections\ConnectionManager.cs" />
+    <Compile Include="Connections\OracleConnectionManager.cs" />
+    <Compile Include="Connections\SqlConnectionManager.cs" />
+    <Compile Include="Managers\DelegationManager.cs" />
+    <Compile Include="Managers\ProfileFieldManager.cs" />
+    <Compile Include="Managers\UserMacManager.cs" />
+    <Compile Include="Managers\RolePrivilageManager.cs" />
+    <Compile Include="Managers\DepartmentPrivilageManager.cs" />
+    <Compile Include="Managers\PositionPrivilageManager.cs" />
+    <Compile Include="Managers\ProfileManager.cs" />
+    <Compile Include="Managers\DepartmentPositionManager.cs" />
+    <Compile Include="Managers\RolePositionManager.cs" />
+    <Compile Include="Managers\UserPositionManager.cs" />
+    <Compile Include="Managers\SettingsManager.cs" />
+    <Compile Include="Managers\RoleResponsipilityManager.cs" />
+    <Compile Include="Managers\DepartmentResponsipilityManager.cs" />
+    <Compile Include="Managers\PositionResponsipilityManager.cs" />
+    <Compile Include="Managers\RoleContactManager.cs" />
+    <Compile Include="Managers\DepartmentContactManager.cs" />
+    <Compile Include="Managers\PositionContactManager.cs" />
+    <Compile Include="Managers\UserContactManager.cs" />
+    <Compile Include="Managers\RolePositionAttachmentManager.cs" />
+    <Compile Include="Managers\RolePositionNoteManager.cs" />
+    <Compile Include="Managers\ModelManager.cs" />
+    <Compile Include="Managers\DepartmentManager.cs" />
+    <Compile Include="Managers\OperationManager.cs" />
+    <Compile Include="Managers\PrivilageManager.cs" />
+    <Compile Include="Managers\DepartmentPositionNoteManager.cs" />
+    <Compile Include="Managers\DepartmentPositionAttachmentManager.cs" />
+    <Compile Include="Managers\UserPositionAttachmentManager.cs" />
+    <Compile Include="Managers\UserAttachmentManager.cs" />
+    <Compile Include="Managers\UserPositionNoteManager.cs" />
+    <Compile Include="Managers\UserNoteManager.cs" />
+    <Compile Include="Managers\RoleManager.cs" />
+    <Compile Include="Managers\PositionManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="Models\clsDelegation.cs" />
+    <Compile Include="Models\clsDepartment.cs" />
+    <Compile Include="Models\clsRolePositionAttachment.cs" />
+    <Compile Include="Models\clsRoleContact.cs" />
+    <Compile Include="Models\clsDepartmentPosition.cs" />
+    <Compile Include="Models\clsRolePositionNote.cs" />
+    <Compile Include="Models\clsDepartmentPrivilage.cs" />
+    <Compile Include="Models\clsDepartmentPositionNote.cs" />
+    <Compile Include="Models\clsDepartmentContact.cs" />
+    <Compile Include="Models\clsPositionContact.cs" />
+    <Compile Include="Models\clsDepartmentPositionAttachment.cs" />
+    <Compile Include="Models\clsUserPositionAttachment.cs" />
+    <Compile Include="Models\clsUserPositionNote.cs" />
+    <Compile Include="Models\clsUserResponsipility.cs" />
+    <Compile Include="Models\clsRoleResponsipility.cs" />
+    <Compile Include="Models\clsOperation.cs" />
+    <Compile Include="Models\clsPosition.cs" />
+    <Compile Include="Models\clsPositionPrivilage.cs" />
+    <Compile Include="Models\clsDepartmentResponsipility.cs" />
+    <Compile Include="Models\clsPositionResponsipility.cs" />
+    <Compile Include="Models\clsPrivilage.cs" />
+    <Compile Include="Models\clsProfile.cs" />
+    <Compile Include="Models\clsProfileField.cs" />
+    <Compile Include="Models\clsRole.cs" />
+    <Compile Include="Models\clsRolePosition.cs" />
+    <Compile Include="Models\clsRolePrivilage.cs" />
+    <Compile Include="Models\clsSettings.cs" />
+    <Compile Include="Models\clsUser.cs" />
+    <Compile Include="Models\clsUserAttachment.cs" />
+    <Compile Include="Models\clsUserContact.cs" />
+    <Compile Include="Models\clsUserMac.cs" />
+    <Compile Include="Models\clsUserNote.cs" />
+    <Compile Include="Models\clsUserPosition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\ORACLE\create\" />
+    <Folder Include="Database\ORACLE\sample\" />
+    <Folder Include="Database\ORACLE\update\" />
+    <Folder Include="Database\SQL\sample\" />
+    <Folder Include="Database\SQL\update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\SQL\create\UMS_PROCEDURES.sql" />
+    <Content Include="Database\SQL\create\UMS_TABLES.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

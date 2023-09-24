@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C292958-9805-4D0B-B132-D31F1A54B710}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KmnlkUMSDll</RootNamespace>
+    <AssemblyName>KmnlkUMSDll</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KmnlkCommon">
+      <HintPath>..\Dlls\KmnlkCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="KmnlkUMSEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KmnlkUMSEngine\bin\Debug\KmnlkUMSEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Constants\modConstant.cs" />
+    <Compile Include="Exceptions\DllException.cs" />
+    <Compile Include="Interfaces\ICURDOperations.cs" />
+    <Compile Include="Interfaces\IValidationOperations.cs" />
+    <Compile Include="Management\ModelManagement.cs" />
+    <Compile Include="Management\DelegationManagement.cs" />
+    <Compile Include="Management\DepartmentContactManagement.cs" />
+    <Compile Include="Management\DepartmentPositionAttachmentManagement.cs" />
+    <Compile Include="Management\DepartmentPositionManagement.cs" />
+    <Compile Include="Management\DepartmentPositionNoteManagement.cs" />
+    <Compile Include="Management\DepartmentPrivilageManagement.cs" />
+    <Compile Include="Management\DepartmentResponsipilityManagement.cs" />
+    <Compile Include="Management\OperationManagement.cs" />
+    <Compile Include="Management\PositionContactManagement.cs" />
+    <Compile Include="Management\PositionManagement.cs" />
+    <Compile Include="Management\ProfileFieldManagement.cs" />
+    <Compile Include="Management\ProfileManagement.cs" />
+    <Compile Include="Management\RoleContactManagement.cs" />
+    <Compile Include="Management\RoleManagement.cs" />
+    <Compile Include="Management\RolePositionAttachmentManagement.cs" />
+    <Compile Include="Management\RolePositionManagement.cs" />
+    <Compile Include="Management\RolePositionNoteManagement.cs" />
+    <Compile Include="Management\RolePrivilageManagement.cs" />
+    <Compile Include="Management\RoleResponsipilityManagement.cs" />
+    <Compile Include="Management\SettingManagement.cs" />
+    <Compile Include="Management\UserAttachmentManagement.cs" />
+    <Compile Include="Management\UserContactManagement.cs" />
+    <Compile Include="Management\UserMacManagement.cs" />
+    <Compile Include="Management\UserPositionNoteManagement.cs" />
+    <Compile Include="Management\UserPositionManagement.cs" />
+    <Compile Include="Management\UserPositionAttachmentManagement.cs" />
+    <Compile Include="Management\UserNoteManagement.cs" />
+    <Compile Include="Management\UserManagment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

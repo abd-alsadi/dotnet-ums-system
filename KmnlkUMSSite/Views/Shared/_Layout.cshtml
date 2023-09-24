@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Styles.Render("~/Content/css/theme/en")
+    @Styles.Render("~/Content/css/pub")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body >
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/theme")
+    <script src="~/Scripts/resources/AllResources.js"></script>
+    @Scripts.Render("~/bundles/shared")
+    <script>
+        function loadCss() {
+            var link = document.createElement("link");
+            link.type = "text/css";
+            link.rel = "stylesheet"
+            if (lang == "0") {
+                link.href = "../Content/theme/css/sb-admin.css";
+            } else {
+                link.href = "../Content/theme/css/sb-admin-ar.css";
+            }
+            document.head.appendChild(link);
+        }
+        loadCss();
+        
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

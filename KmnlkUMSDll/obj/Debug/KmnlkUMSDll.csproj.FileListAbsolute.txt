@@ -1,0 +1,10 @@
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\obj\Debug\KmnlkUMSDll.csprojResolveAssemblyReference.cache
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkUMSDll.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkUMSDll.pdb
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkCommon.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkUMSEngine.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\Newtonsoft.Json.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkUMSEngine.pdb
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\bin\Debug\KmnlkUMSEngine.dll.config
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\obj\Debug\KmnlkUMSDll.dll
+S:\LocalPro\KmnlkUMS\KmnlkUMSDll\obj\Debug\KmnlkUMSDll.pdb
